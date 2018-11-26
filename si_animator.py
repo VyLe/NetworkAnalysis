@@ -191,10 +191,10 @@ def plot_network_usa(net, xycoords, edges=None, linewidths=None):
 
 if __name__ == "__main__":
     #infection_times = np.linspace(1229286900, 1230128400, 279)
-    print(infection_times)
+    print(np.asarray(infection_times))
     print("This is how the visualization looks like")
     # adjust tot_viz_time and/or fps to create the movie faster
-    ani = visualize_si(infection_times, fps=20, tot_viz_time_in_seconds=20)
+    ani = visualize_si(np.asarray(infection_times), save_fname="si_viz_example.mp4", fps=20, tot_viz_time_in_seconds=20)
 
     # for saving the simulation as a video, you may want to use:
     # visualize_si(
