@@ -63,7 +63,7 @@ print("Anchorage infection time: ",infection.InfectionTime[41])
 #Task 2
 def averaged_prevalence_visualization(infection, start, end, p, label):
     stepsize = 50    
-    t = np.linspace(start, end, 50)
+    t = np.linspace(start, end, stepsize)  #To increase this stepsize
     p_t = np.zeros((stepsize,10), dtype=float)
     for k in range(0,10):
         for j in range (0,stepsize):
@@ -78,7 +78,6 @@ for p in (0.01, 0.05, 0.1, 0.5, 1):
     infection_p = infection_model(network, p,flights, start_node_0)
     averaged_prevalence_visualization(infection_p, start_time, end_time, p, p)
 plt.xlabel("Time")
-plt.xlim(start_time, end_time, 50)
 plt.ylabel("Averaged prevalence")
 plt.legend()
 plt.show()
